@@ -6,6 +6,8 @@
     <title>Motor de Leads - Consórcio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- SDK Oficial do Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="container">
@@ -16,27 +18,38 @@
 
         <main class="card">
             <div class="form-group">
-                <label for="cnae">Segmento (CNAE)</label>
+                <label for="cnae">Segmento (Perfil do Lead)</label>
                 <select id="cnae">
-                    <option value="8630501">Médicos (Atividade médica ambulatorial)</option>
-                    <option value="4120400">Construtoras (Construção de edifícios)</option>
-                    <option value="6911701">Advogados (Serviços jurídicos)</option>
-                    <option value="6462000">Holdings (Instituições não financeiras)</option>
-                    <option value="0111301">Agro (Cultivo)</option>
+                    <option value="8630501">Médicos & Clínicas</option>
+                    <option value="4120400">Construtoras & Incorporadoras</option>
+                    <option value="6911701">Advogados & Escritórios</option>
+                    <option value="6462000">Holdings & Investidores</option>
+                    <option value="0111301">Agronegócio</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="cep">Prefixo do CEP (Regiões Nobres)</label>
-                <input type="text" id="cep" placeholder="Ex: 045 (Itaim Bibi), 224 (Leblon)" maxlength="5">
+                <label for="regiao">Localização (Filtro por m² mais caro)</label>
+                <select id="regiao">
+                    <option value="todas">🇧🇷 Brasil inteiro (Top 50 Bairros Nobres)</option>
+                    <option value="sp">São Paulo (Itaim Bibi, Jardins, Moema, Pinheiros)</option>
+                    <option value="rj">Rio de Janeiro (Leblon, Ipanema, Barra da Tijuca)</option>
+                    <option value="sul">Sul (Balneário Camboriú, Batel - Curitiba, Florianópolis)</option>
+                    <option value="outras">Demais Capitais (BH - Lourdes/Savassi, Brasília - Sudoeste)</option>
+                </select>
             </div>
 
             <div class="form-group">
                 <label for="capital">Capital Social Mínimo (R$)</label>
-                <input type="text" id="capital" placeholder="Ex: 500000" value="500000">
+                <input type="text" id="capital" value="500.000,00">
             </div>
 
             <button id="btn-buscar" class="btn-primary">Buscar e Exportar CSV</button>
+            
+            <button id="btn-sync" class="btn-secondary" style="margin-top: 10px; width: 100%; background-color: #4b5563; color: white; padding: 0.75rem; border: none; border-radius: 8px; cursor: pointer; font-weight: 500; font-family: 'Inter', sans-serif;">
+                🔄 Atualizar Base de Dados (Nuvem)
+            </button>
+
             <div id="status" class="status"></div>
         </main>
     </div>
