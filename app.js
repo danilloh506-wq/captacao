@@ -11,11 +11,6 @@ inputCapital.addEventListener('input', (e) => {
 // Configurações do Supabase (Substitua pelas suas chaves após criar o projeto)
 const SUPABASE_URL = 'https://ogtuawhwjbzrtkwnvlyp.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_s7sJ40oQI5LybX7N-VrZGQ_mnYXRPLM';
-```[cite: 4]
-
-> **Aviso de Segurança:** Nunca utilize o `SUPABASE_SECRET_KEY` no arquivo do site (`app.js`). Ele é a sua chave secreta com acesso administrativo total e **jamais** deve ficar visível publicamente no navegador.
-
-<FollowUp> Agora que o `app.js` está configurado com as chaves corretas, quer abrir o arquivo `index.html` no seu navegador para testarmos a busca de leads? </FollowUp>
 
 document.getElementById('btn-buscar').addEventListener('click', async () => {
     const cnae = document.getElementById('cnae').value;
