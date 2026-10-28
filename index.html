@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor de Leads - Consórcio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Motor de Leads - Alto Padrão</h1>
+            <p>Extração e Qualificação para Cartas de Crédito (> R$ 500k)</p>
+        </header>
+
+        <main class="card">
+            <div class="form-group">
+                <label for="cnae">Segmento (CNAE)</label>
+                <select id="cnae">
+                    <option value="8630501">Médicos (Atividade médica ambulatorial)</option>
+                    <option value="4120400">Construtoras (Construção de edifícios)</option>
+                    <option value="6911701">Advogados (Serviços jurídicos)</option>
+                    <option value="6462000">Holdings (Instituições não financeiras)</option>
+                    <option value="0111301">Agro (Cultivo)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cep">Prefixo do CEP (Regiões Nobres)</label>
+                <input type="text" id="cep" placeholder="Ex: 045 (Itaim Bibi), 224 (Leblon)" maxlength="5">
+            </div>
+
+            <div class="form-group">
+                <label for="capital">Capital Social Mínimo (R$)</label>
+                <input type="text" id="capital" placeholder="Ex: 500000" value="500000">
+            </div>
+
+            <button id="btn-buscar" class="btn-primary">Buscar e Exportar CSV</button>
+            <div id="status" class="status"></div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
